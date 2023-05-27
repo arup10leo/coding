@@ -1,0 +1,29 @@
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        char x;
+        map<char,int>m;
+        string str = s+t;
+        for(int i=0;i<t.length();i++){
+            m[t[i]]++;
+        }
+        for(int i=0;i<s.length();i++){
+            m[s[i]]--;
+        }
+        for(auto it:m){
+            if(it.second==1) x = it.first;
+        }
+        return x;
+    }
+};
+
+
+class Solution {
+public:
+        char findTheDifference(string s, string t) {
+        char ret ='\0';
+        for (auto &c: s) ret^=c;
+        for (auto &c: t) ret^=c;
+        return ret;
+    }
+};
