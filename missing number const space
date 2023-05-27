@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& a) {
+        int sum=0;
+        int n = a.size();
+        for(auto it:a){
+            sum+=it;
+        }
+        int large = *max_element(a.begin(), a.end());
+        int small = *min_element(a.begin(), a.end());
+        return n*(n+1)/2-sum;
+    }
+};
+
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int xor1=0,xor2=0;
+        for(int i=0;i<n;i++){
+            xor1^=(i+1);
+            xor2^=nums[i];
+        }
+        return xor2 ^ xor1;
+    }
+};
