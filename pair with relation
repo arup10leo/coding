@@ -1,0 +1,23 @@
+unordered_map<int,int>m;
+
+       for(int i=0;i<n-1;i++)
+
+       {
+
+           for(int j=i+1;j<n;j++)
+
+           {
+
+               int val=arr[i]*arr[j];
+
+               m[val]++;
+
+               if(m[val]>1)
+
+               return 1;
+
+           }
+
+       }
+
+       return -1;
