@@ -1,0 +1,35 @@
+TIME COMPLEXITY: OPTIMAL
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        vector<int>ans;
+        map<int,int>m;
+        for(auto it:nums){
+            m[it]++;
+        }
+        for(auto it:m){
+            while(it.second--){
+                ans.push_back(it.first);
+            }
+        }
+        nums=ans;
+        
+    }
+};
+
+SPACE COMPLEXITY: OPTIMAL
+
+BUBBLE SORT 
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        for(int i=nums.size()-1;i>0;i--){
+            for(int j=0;j<=i-1;j++){
+                if(nums[j]>nums[j+1]){
+                    swap(nums[j],nums[j+1]);
+                }
+            }
+        }
+    }
+};
