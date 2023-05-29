@@ -1,0 +1,19 @@
+public:
+    int firstNonRepeating(int arr[], int n) 
+    { 
+        // Complete the function
+        unordered_map<int,int>m;
+       
+        for(int i=0;i<n;i++){
+            m[arr[i]]++;
+        }
+        int x=0;
+        
+        for(int i=0;i<n;i++){
+            if(m.find(arr[i])!=m.end() and m[arr[i]]==1){ 
+                x = arr[i];
+                break;
+        }
+    }
+     return x;   
+    } 
